@@ -7,7 +7,7 @@ function checkNewNoteInstantiated() {
   let actual = note.text
   assert.isTrue(actual === expectation, nameOfFunc[1]);
 }
-checkNewNoteInstantiated()
+checkNewNoteInstantiated();
 
 function checkReturnText() {
   nameOfFunc = arguments.callee.toString().match(/function\s+([^\s\(]+)/);
@@ -16,4 +16,12 @@ function checkReturnText() {
   let actual = note.returnText()
   assert.isTrue(actual === expectation, nameOfFunc[1]);
 }
-checkReturnText()
+checkReturnText();
+
+function checkNoteId() {
+  nameOfFunc = arguments.callee.toString().match(/function\s+([^\s\(]+)/);
+
+  let note = new Note('remember to drink water');
+  assert.isTrue(note.id === 0, nameOfFunc[1]);
+}
+checkNoteId();
