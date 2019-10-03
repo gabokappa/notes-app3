@@ -11,10 +11,22 @@
 <body>
     <div id="app">hello</div>
     <button id="button">Button</button>
-
+    <script src="note-model.js"></script>
     <script src="note-list-model.js"></script>
     <script src="note-list-view.js"></script>
     <script src="note-controller.js"></script>
+    <script>
+        var noteList3 = new NoteList();
+
+        noteList3.createNote("This has been the most fun I have ever had");
+        noteList3.createNote("Rafaela is so unimpressed with my keyboard driving");
+
+        var noteController2 = new NoteController(noteList3);
+        noteController2.createNoteListView();
+
+        noteController2.render();
+    </script>
+
 </body>
 
 </html>
