@@ -32,23 +32,18 @@
     makeUrlShowNoteForCurrentPage();
 
     function makeUrlShowNoteForCurrentPage() {
-      window.addEventListener("hashchange", showNoteForCurrentPage);
+      window.addEventListener("hashchange", getNoteFromUrl);
     };
 
-    function showNoteForCurrentPage() {
-      showNote(getNoteFromUrl(window.location));
-    };
-
-    function getNoteFromUrl(location) {
-      checkNoteId(location.hash.split("/")[1]);
-    };
-    console.log(checkNoteId(location.hash.split("/")[1]));
-    function checkNoteId(num){
-        noteList3.list.forEach(function (note) {
-            if(note.id === num) {
+    function getNoteFromUrl() {
+    let num = parseInt(window.location.hash.split("/")[1]);
+        noteList3.list.forEach(function(note) {
+            if(note.id === num){
                 showNote(note.text);
             }
-    }
+        });
+
+    };
 
     function showNote(noteText) {
       document
