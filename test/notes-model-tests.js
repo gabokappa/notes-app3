@@ -21,7 +21,8 @@ checkReturnText();
 function checkNoteId() {
   nameOfFunc = arguments.callee.toString().match(/function\s+([^\s\(]+)/);
 
-  let note = new Note('remember to drink water');
-  assert.isTrue(note.id === 0, nameOfFunc[1]);
+  let expectation = 0;
+  let actual = note.id;
+  assert.isTrue(actual === expectation, nameOfFunc[1]);
 }
 checkNoteId();
