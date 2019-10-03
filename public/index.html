@@ -27,6 +27,36 @@
         noteController2.render();
     </script>
 
+<script>
+
+    makeUrlShowNoteForCurrentPage();
+
+    function makeUrlShowNoteForCurrentPage() {
+      window.addEventListener("hashchange", showNoteForCurrentPage);
+    };
+
+    function showNoteForCurrentPage() {
+      showNote(getNoteFromUrl(window.location));
+    };
+
+    function getNoteFromUrl(location) {
+      checkNoteId(location.hash.split("/")[1]);
+    };
+    console.log(checkNoteId(location.hash.split("/")[1]));
+    function checkNoteId(num){
+        noteList3.list.forEach(function (note) {
+            if(note.id === num) {
+                showNote(note.text);
+            }
+    }
+
+    function showNote(noteText) {
+      document
+        .getElementById('app')
+        .innerHTML = noteText;
+    };
+  </script>
+
 </body>
 
 </html>
