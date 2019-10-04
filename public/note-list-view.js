@@ -9,7 +9,6 @@
       output += `<div> <a href='#notes/${note.id}'>${note.text.slice(0,20)}...</a> </div>`;
     });
     output += '</ul>';
-  console.log(output);
     return output
   };
   exports.NoteListView = NoteListView;

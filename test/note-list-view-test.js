@@ -1,5 +1,5 @@
 function returnsListOfNotes() {
-  nameOfFunc = arguments.callee.toString().match(/function\s+([^\s\(]+)/);
+  nameOfFunc = arguments.callee.toString().match(/function\s+([^\s(]+)/);
   noteList = new NoteList();
   noteList.createNote("This is my new note - remember to water the plants");
   noteList.createNote("This is the second note - remember to feed the dog and cat");
